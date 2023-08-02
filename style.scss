@@ -94,6 +94,14 @@ body{
                 padding: 0px 0px 0px 60px;
                 cursor: pointer;
                 transition:background-color .3s ease;
+                    .leyend{
+                        position: absolute;
+                        color: #e44e4e;
+                        font-weight: 700;
+                        font-size: 1em;
+                        right: 70px;
+                    }
+
                 &.select{
                     background-color: #1dd67d;
                     color: #ffffff;
@@ -111,15 +119,7 @@ body{
                         right: 70px;
                     }
                 }
-
-                .select__task{
-                    position: absolute;
-                    left: 10px;
-                    border-radius: 50%;
-                    border: none;
-                    outline: none;
-                    
-                }
+            }
                 // boton de eliminar tarea 
                 button{
                     background-color: transparent;
@@ -141,8 +141,8 @@ body{
                 }
             }
 
-        }
-        // checkbos de tareas 
+    }
+    // checkbos de tareas 
 .container {
     cursor: pointer;
     position: absolute;
@@ -172,9 +172,10 @@ body{
         stroke: rgb(255, 255, 255);
       }
     }
-}
     }
+}
 
+    // TEREAS COMPLETADAS
     .contenedor__tareas__completadas{
             display: flex;
             flex-direction: column;
@@ -250,5 +251,5 @@ body{
             }
     
         }
-}
+
 

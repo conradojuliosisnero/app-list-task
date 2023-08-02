@@ -3,6 +3,7 @@ const input = document.querySelector(".input");
 const button = document.querySelector(".btn__task");
 const list = document.querySelector(".list__task");
 const tasks = document.querySelector(".task");
+const leyenda = document.querySelector(".leyend");
 const btndelete = document.querySelector('.btn__detele-task');
 
     // funcion AGREGAR TAREAS 

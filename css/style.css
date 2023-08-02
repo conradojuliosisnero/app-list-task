@@ -92,6 +92,13 @@ body .contenedor ul .task {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+body .contenedor ul .task .leyend {
+  position: absolute;
+  color: #e44e4e;
+  font-weight: 700;
+  font-size: 1em;
+  right: 70px;
+}
 body .contenedor ul .task.select {
   background-color: #1dd67d;
   color: #ffffff;
@@ -107,14 +114,7 @@ body .contenedor ul .task.completed::after {
   font-size: 1em;
   right: 70px;
 }
-body .contenedor ul .task .select__task {
-  position: absolute;
-  left: 10px;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-}
-body .contenedor ul .task button {
+body .contenedor ul button {
   background-color: transparent;
   border: solid 3px #d61d1d;
   color: #d61d1d;
@@ -128,26 +128,26 @@ body .contenedor ul .task button {
   font-weight: 900;
   cursor: pointer;
 }
-body .contenedor ul .task button:hover {
+body .contenedor ul button:hover {
   background-color: #d61d1d;
   color: #ffffff;
 }
-body .contenedor .container {
+body .container {
   cursor: pointer;
   position: absolute;
   left: 10px;
 }
-body .contenedor .container input {
+body .container input {
   display: none;
 }
-body .contenedor .container svg {
+body .container svg {
   overflow: visible;
 }
-body .contenedor .container input:checked ~ svg .path {
+body .container input:checked ~ svg .path {
   stroke-dasharray: 70.5096664429 9999999;
   stroke-dashoffset: -262.2723388672;
 }
-body .contenedor .container .path {
+body .container .path {
   fill: none;
   stroke: rgb(63, 63, 63);
   stroke-width: 6;
@@ -157,10 +157,11 @@ body .contenedor .container .path {
   stroke-dasharray: 241 9999999;
   stroke-dashoffset: 0;
 }
-body .contenedor .container .path.color__white {
+body .container .path.color__white {
   stroke: rgb(255, 255, 255);
 }
-body .contenedor__tareas__completadas {
+
+.contenedor__tareas__completadas {
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.1);
@@ -172,7 +173,7 @@ body .contenedor__tareas__completadas {
   border-radius: 0.7em;
   grid-area: list;
 }
-body .contenedor__tareas__completadas .tittle {
+.contenedor__tareas__completadas .tittle {
   color: #000000;
   display: flex;
   width: 100%;
@@ -182,7 +183,7 @@ body .contenedor__tareas__completadas .tittle {
   margin: 0;
   padding: 30px 0px;
 }
-body .contenedor__tareas__completadas ul {
+.contenedor__tareas__completadas ul {
   width: 100%;
   display: flex;
   position: relative;
@@ -190,7 +191,7 @@ body .contenedor__tareas__completadas ul {
   padding: 0;
   margin: 0;
 }
-body .contenedor__tareas__completadas ul li {
+.contenedor__tareas__completadas ul li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -204,17 +205,17 @@ body .contenedor__tareas__completadas ul li {
   font-weight: 700;
   padding: 0px 0px 0px 60px;
 }
-body .contenedor__tareas__completadas ul li:hover {
+.contenedor__tareas__completadas ul li:hover {
   background-color: rgb(236, 255, 219);
 }
-body .contenedor__tareas__completadas ul li .select__task {
+.contenedor__tareas__completadas ul li .select__task {
   position: absolute;
   left: 10px;
   border-radius: 50%;
   border: none;
   outline: none;
 }
-body .contenedor__tareas__completadas ul li button {
+.contenedor__tareas__completadas ul li button {
   background-color: transparent;
   border: solid 3px #1dd67d;
   color: #1dd67d;
@@ -228,7 +229,7 @@ body .contenedor__tareas__completadas ul li button {
   font-weight: 900;
   cursor: pointer;
 }
-body .contenedor__tareas__completadas ul li button:hover {
+.contenedor__tareas__completadas ul li button:hover {
   background-color: #1dd67d;
   color: #ffffff;
 }/*# sourceMappingURL=style.css.map */
