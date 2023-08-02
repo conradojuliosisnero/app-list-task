@@ -22,6 +22,15 @@ const btndelete = document.querySelector(".btn__detele-task");
 
 //     // newElement.textContent = inputValue.textContent;
 // }
+    function addTask() {
+        let textAdd = input.value;
+        let li = document.createElement("li")
+        let p = document.createElement("p")
+        p.textContent = textAdd;
+        li.appendChild(p)
+        list.appendChild(li)
+
+        }
 
 //  funcion SELECCIONAR ELEMENTOS
 function select() {
@@ -46,5 +55,5 @@ function deteleTask() {
 // listeners
 tasks.addEventListener("click", select);
 btndelete.addEventListener("click", deteleTask);
-
+button.addEventListener("click", addTask);
 // button.addEventListener('click',addTask)

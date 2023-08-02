@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>DOM</title>
-</head>
-<body>
-    <div class="contenedor">
-        <div class="tittle"><h1>LIST FOR ACTIVITYS</h1></div>
-        <div class="contenedor__task">
-            <input placeholder="Add Task" type="text" name="input" class="input">
-            <button class="btn__task">+</button>
-        </div>
-        <ul class="list__task">
-            <li class="task" id="task-list">
-                <p>Aprender React</p>
-                <p class="leyend">unfinished</p>
-                <button class="btn__detele-task">X</button>
-            </li>
-        </ul>
-    </div>    
-    <div class="contenedor__tareas__completadas">
-        <div class="tittle"><h1>TASKS COMPLETED</h1></div>
-        <ul class="list__task">
-        </ul>
-    </div>
-    <script src="main.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>DOM</title>
+	</head>
+	<body>
+		<div class="contenedor">
+			<div class="tittle"><h1>LIST FOR ACTIVITYS</h1></div>
+			<div class="contenedor__task">
+				<input placeholder="Add Task" type="text" name="input" class="input" />
+				<button class="btn__task">+</button>
+			</div>
+			<ul class="list__task">
+				<li class="task" id="task-list">
+					<p>Aprender React</p>
+					<p class="leyend">unfinished</p>
+					<button class="btn__detele-task">X</button>
+				</li>
+			</ul>
+		</div>
+		<div class="contenedor__tareas__completadas">
+			<div class="tittle"><h1>TASKS COMPLETED</h1></div>
+			<ul class="list__task"></ul>
+		</div>
+		<div class="contenedor__reloj">
+			<div class="reloj">
+				<div class="seconds">
+					1
+					<p>seconds</p>
+				</div>
+				<div class="minutes">
+					10
+					<p>minutes</p>
+				</div>
+				<div class="hours">
+					1
+					<p>hours</p>
+				</div>
+			</div>
+			<div>
+				<div class="day">
+					02
+					<p>day</p>
+				</div>
+				<div class="month">
+					08
+					<p>month</p>
+				</div>
+				<div class="year">
+					2023
+					<p>year</p>
+				</div>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
 </html>
