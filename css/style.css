@@ -58,7 +58,7 @@ body .contenedor .contenedor__task .input {
   margin: 0px 10px;
 }
 body .contenedor .contenedor__task .btn__task {
-  background-color: #1dd68c;
+  background-color: #28a875;
   width: 60px;
   height: 55px;
   border: none;
@@ -76,7 +76,7 @@ body .contenedor ul {
   padding: 0;
   margin: 0;
 }
-body .contenedor ul li {
+body .contenedor ul .task {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -89,18 +89,32 @@ body .contenedor ul li {
   color: rgb(0, 0, 0);
   font-weight: 700;
   padding: 0px 0px 0px 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-body .contenedor ul li:hover {
-  background-color: rgb(236, 255, 219);
+body .contenedor ul .task.select {
+  background-color: #1dd67d;
+  color: #ffffff;
 }
-body .contenedor ul li .select__task {
+body .contenedor ul .task.select button {
+  opacity: 0;
+}
+body .contenedor ul .task.completed::after {
+  content: "Completed";
+  position: absolute;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1em;
+  right: 70px;
+}
+body .contenedor ul .task .select__task {
   position: absolute;
   left: 10px;
   border-radius: 50%;
   border: none;
   outline: none;
 }
-body .contenedor ul li button {
+body .contenedor ul .task button {
   background-color: transparent;
   border: solid 3px #d61d1d;
   color: #d61d1d;
@@ -114,7 +128,7 @@ body .contenedor ul li button {
   font-weight: 900;
   cursor: pointer;
 }
-body .contenedor ul li button:hover {
+body .contenedor ul .task button:hover {
   background-color: #d61d1d;
   color: #ffffff;
 }
@@ -142,6 +156,9 @@ body .contenedor .container .path {
   transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
   stroke-dasharray: 241 9999999;
   stroke-dashoffset: 0;
+}
+body .contenedor .container .path.color__white {
+  stroke: rgb(255, 255, 255);
 }
 body .contenedor__tareas__completadas {
   display: flex;

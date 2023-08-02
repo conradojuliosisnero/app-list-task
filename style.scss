@@ -59,7 +59,7 @@ body{
             }
             // boton de agregar tareas 
             .btn__task{
-                background-color: #1dd68c;
+                background-color: #28a875;
                 width: 60px;
                 height: 55px;
                 border: none;
@@ -79,7 +79,7 @@ body{
             flex-direction: column;
             padding: 0;
             margin: 0;
-            li{
+            .task{
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
@@ -92,9 +92,26 @@ body{
                 color: rgb(0, 0, 0);
                 font-weight: 700;
                 padding: 0px 0px 0px 60px;
-                &:hover{
-                    background-color: rgb(236, 255, 219);
+                cursor: pointer;
+                transition:background-color .3s ease;
+                &.select{
+                    background-color: #1dd67d;
+                    color: #ffffff;
+                    button{
+                        opacity: 0;
+                    }
                 }
+                &.completed{
+                    &::after{
+                        content: 'Completed';
+                        position: absolute;
+                        color: #ffffff;
+                        font-weight: 700;
+                        font-size: 1em;
+                        right: 70px;
+                    }
+                }
+
                 .select__task{
                     position: absolute;
                     left: 10px;
@@ -123,6 +140,7 @@ body{
                     }
                 }
             }
+
         }
         // checkbos de tareas 
 .container {
@@ -150,6 +168,9 @@ body{
       transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
       stroke-dasharray: 241 9999999;
       stroke-dashoffset: 0;
+      &.color__white{
+        stroke: rgb(255, 255, 255);
+      }
     }
 }
     }
