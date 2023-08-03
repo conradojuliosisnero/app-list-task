@@ -174,47 +174,36 @@ body{
                 flex-direction: column;
                 padding: 0;
                 margin: 0;
-                li{
+                .task{
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
                     position: relative;
                     margin: 10px 0px;
-                    background-color: #ffffff;
+                    background-color: #ffcece;
                     width: 100%;
                     height: 80px;
                     border-radius: .9em;
                     color: rgb(0, 0, 0);
                     font-weight: 700;
                     padding: 0px 0px 0px 60px;
-                    &:hover{
-                        background-color: rgb(236, 255, 219);
+                    cursor: pointer;
+                    transition:background-color .3s ease;
+                    &.select{
+                        background-color: #1dd67d;
+                        color: #ffffff;
+                        button{
+                            opacity: 0;
+                        }
                     }
-                    .select__task{
-                        position: absolute;
-                        left: 10px;
-                        border-radius: 50%;
-                        border: none;
-                        outline: none;
-                        
-                    }
-                    // boton de eliminar tarea 
-                    button{
-                        background-color: transparent;
-                        border: solid 3px #1dd67d;
-                        color: #1dd67d;
-                        position: absolute;
-                        right: 10px;
-                        outline: none;
-                        border-radius: 50%;
-                        width: 35px;
-                        height: 35px;
-                        margin: 5px;
-                        font-weight: 900;
-                        cursor: pointer;
-                        &:hover{
-                            background-color: #1dd67d;
+                    &.completed{
+                        &::after{
+                            content: 'Completed';
+                            position: absolute;
                             color: #ffffff;
+                            font-weight: 700;
+                            font-size: 1em;
+                            right: 70px;
                         }
                     }
                 }
