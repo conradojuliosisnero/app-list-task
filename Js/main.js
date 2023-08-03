@@ -3,9 +3,9 @@ const input = document.querySelector(".input");
 const button = document.querySelector(".btn__task");
 const list = document.querySelector(".list__task");
 const taskCompleted = document.querySelector(".list__task__completed");
-const tasks = document.querySelectorAll(".task");
+// const tasks = document.querySelectorAll(".task");
 const leyenda = document.querySelector(".leyend");
-const texto = document.querySelector(".texto");
+// const texto = document.querySelector(".texto");
 
 //variables
 let idCounter = 0;
@@ -13,7 +13,6 @@ let idCounter = 0;
 // funcion AGREGAR TAREA
 function addTask() {
     if (input.value !== "") {
-        
         idCounter++;
         let Input = input.value;
         list.innerHTML += `<li class="task" id="task${idCounter}">
@@ -36,23 +35,24 @@ list.addEventListener('click',(event)=>{
     if (event.target.className === 'detele-task active') {
         const id = event.target.id.replace('detele-task','task');
         deteleTask(id);
+    } else if (event.target.nodeName === 'P' || event.target.nodeName === 'LI'){
+        selection(event.target.closest('.task'));
     }
 })
 
-
 //  funcion SELECCIONAR ELEMENTOS
-function selection() {
-    // agregamos estas clases
-	tasks.classList.toggle("select");
-	tasks.classList.toggle("completed");
-    if (tasks.classList.contains('select')) {
-        let tarea = taskCompleted.innerHTML +=
-        `<li class="task completed select" id="${idCounter}">
-            <p>${texto.textContent}</p>
+function selection(task) {
+    task.classList.toggle("select");
+    task.classList.toggle("completed");
+    if (task.classList.contains('select')) {
+        taskCompleted.innerHTML += `<li class="task completed select" id="${task.id}">
+            <p>${task.querySelector('p').textContent}</p>
+            <button class="detele-task active" id="detele-task${task.id.replace('task', '')}">X</button>
         </li>`;
-    }else{
-        tarea.remove()
+    } else {
+        let tarea = document.getElementById(task.id);
+        if (tarea) {
+            tarea.remove();
+        }
     }
 }
-
-
