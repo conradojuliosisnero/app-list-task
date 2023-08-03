@@ -6,8 +6,6 @@ const tasks = document.querySelector(".task");
 const leyenda = document.querySelector(".leyend");
 const btndelete = document.querySelector(".btn__detele-task");
 
-// funcion AGREGAR TAREAS
-
 // function addTask() {
 //     // let li = document.createElement('li')
 //     // li.appendChild(document.createTextNode(input.value))
