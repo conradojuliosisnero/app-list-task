@@ -53,6 +53,9 @@
                 }
             }
         }
+        .wrapper {
+            opacity:0;
+        }
     }
 }
 
@@ -104,6 +107,9 @@
             height: 100%;
             border-radius: 0.7em;
             grid-area: date;
+            .wrapper {
+                opacity:0;
+            }
             .day {
                 grid-area: day;
                 @include caja_flex(flex, center, center, 100%);
@@ -195,6 +201,9 @@
             height: 100%;
             border-radius: 0.7em;
             grid-area: date;
+              .wrapper {
+                opacity:0;
+            }
             .day {
                 grid-area: day;
                 @include caja_flex(flex, center, center, 100%);
