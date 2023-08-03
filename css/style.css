@@ -15,7 +15,8 @@ body {
   grid-template-areas: "date date date date" "date date date date" "task task list list" "task task list list";
   width: 100%;
 }
-body .contenedor {
+
+.container__task {
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
@@ -29,7 +30,7 @@ body .contenedor {
   justify-content: center;
   align-items: center;
 }
-body .contenedor .tittle {
+.container__task .tittle {
   color: #313131;
   display: flex;
   width: 100%;
@@ -39,7 +40,7 @@ body .contenedor .tittle {
   margin: 0;
   padding: 30px 0px;
 }
-body .contenedor .contenedor__task {
+.container__task .contenedor__task {
   display: flex;
   padding: 20px 0px;
   justify-content: center;
@@ -48,7 +49,7 @@ body .contenedor .contenedor__task {
   height: 30px;
   margin: 20px 0px;
 }
-body .contenedor .contenedor__task .input {
+.container__task .contenedor__task .input {
   width: 100%;
   height: 4em;
   border: none;
@@ -59,7 +60,10 @@ body .contenedor .contenedor__task .input {
   padding: 0px 0px 0px 10px;
   margin: 0px 10px;
 }
-body .contenedor .contenedor__task .btn__task {
+.container__task .contenedor__task .btn__task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #28a875;
   width: 60px;
   height: 55px;
@@ -70,7 +74,7 @@ body .contenedor .contenedor__task .btn__task {
   font-size: 1.5em;
   cursor: pointer;
 }
-body .contenedor ul {
+.container__task ul {
   width: 100%;
   display: flex;
   position: relative;
@@ -78,7 +82,7 @@ body .contenedor ul {
   padding: 0;
   margin: 0;
 }
-body .contenedor ul .task {
+.container__task ul .task {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -94,21 +98,21 @@ body .contenedor ul .task {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-body .contenedor ul .task .leyend {
+.container__task ul .task .leyend {
   position: absolute;
   color: #e44e4e;
   font-weight: 700;
   font-size: 1em;
   right: 70px;
 }
-body .contenedor ul .task.select {
+.container__task ul .task.select {
   background-color: #1dd67d;
   color: #ffffff;
 }
-body .contenedor ul .task.select button {
+.container__task ul .task.select button {
   opacity: 0;
 }
-body .contenedor ul .task.completed::after {
+.container__task ul .task.completed::after {
   content: "Completed";
   position: absolute;
   color: #ffffff;
@@ -116,7 +120,7 @@ body .contenedor ul .task.completed::after {
   font-size: 1em;
   right: 70px;
 }
-body .contenedor ul button {
+.container__task ul button {
   background-color: transparent;
   border: solid 3px #d61d1d;
   color: #d61d1d;
@@ -130,48 +134,20 @@ body .contenedor ul button {
   font-weight: 900;
   cursor: pointer;
 }
-body .contenedor ul button:hover {
+.container__task ul button:hover {
   background-color: #d61d1d;
   color: #ffffff;
-}
-body .container {
-  cursor: pointer;
-  position: absolute;
-  left: 10px;
-}
-body .container input {
-  display: none;
-}
-body .container svg {
-  overflow: visible;
-}
-body .container input:checked ~ svg .path {
-  stroke-dasharray: 70.5096664429 9999999;
-  stroke-dashoffset: -262.2723388672;
-}
-body .container .path {
-  fill: none;
-  stroke: rgb(63, 63, 63);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
-  stroke-dasharray: 241 9999999;
-  stroke-dashoffset: 0;
-}
-body .container .path.color__white {
-  stroke: rgb(255, 255, 255);
 }
 
 .contenedor__tareas__completadas {
   display: flex;
+  width: 100%;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   margin: 50px 0px 0px 0px;
   padding: 40px;
-  width: 650px;
   border-radius: 0.7em;
   grid-area: list;
 }
@@ -354,4 +330,97 @@ body .container .path.color__white {
   color: #000000;
   padding: 0px 15px;
   font-family: "Outfit", sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-color: rgb(223, 223, 223);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "date date date date" "date date date date" "task task list list" "task task list list";
+    width: 100%;
+  }
+  body .container__task {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    margin: 50px 0px 0px 0px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 0.7em;
+    grid-area: task;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 769px) {
+  body {
+    background-color: rgb(223, 223, 223);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "date date date date" "date date date date" "list list list list" "list list list list" "task task task task" "task task task task";
+    width: 100%;
+  }
+}
+@media screen and (max-width: 426px) {
+  body {
+    padding: 20px;
+    background-color: rgb(223, 223, 223);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "date date date date" "date date date date" "list list list list" "list list list list" "task task task task" "task task task task";
+    width: 100%;
+  }
+  body .contenedor__reloj {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0px 0px 0px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7em;
+    grid-area: date;
+  }
+  body .contenedor__reloj .day {
+    grid-area: day;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 2.5em;
+  }
+  body .contenedor__reloj .day p {
+    color: #000000;
+    padding: 0px 15px;
+    font-family: "Outfit", sans-serif;
+  }
+  body .contenedor__reloj .month {
+    grid-area: month;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 2.5em;
+  }
+  body .contenedor__reloj .month p {
+    color: #000000;
+    padding: 0px 15px;
+    font-family: "Outfit", sans-serif;
+  }
+  body .contenedor__reloj .year {
+    grid-area: year;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 2.5em;
+  }
+  body .contenedor__reloj .year p {
+    color: #000000;
+    padding: 0px 15px;
+    font-family: "Outfit", sans-serif;
+  }
+  body .task .leyend {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

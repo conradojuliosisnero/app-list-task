@@ -18,12 +18,11 @@ body{
     "date date date date"
     "task task list list"
     "task task list list"
-
      ;
     width: 100%;
-
+}
     // contenedor
-    .contenedor{
+    .container__task{
         display: flex;
         flex-direction: column;
         background-color: rgb(255, 255, 255);
@@ -67,6 +66,9 @@ body{
             }
             // boton de agregar tareas 
             .btn__task{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 background-color: #28a875;
                 width: 60px;
                 height: 55px;
@@ -150,48 +152,16 @@ body{
             }
 
     }
-    // checkbos de tareas 
-.container {
-    cursor: pointer;
-    position: absolute;
-    left: 10px;
-    input {
-        display: none;
-    }
-    
-    svg {
-        overflow: visible;
-    }
-    
-    input:checked ~ svg .path {
-      stroke-dasharray: 70.5096664428711 9999999;
-      stroke-dashoffset: -262.2723388671875;
-    }
-    .path {
-      fill: none;
-      stroke: rgb(63, 63, 63);
-      stroke-width: 6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
-      stroke-dasharray: 241 9999999;
-      stroke-dashoffset: 0;
-      &.color__white{
-        stroke: rgb(255, 255, 255);
-      }
-    }
-    }
-}
 
     // TEREAS COMPLETADAS
     .contenedor__tareas__completadas{
             display: flex;
+            width: 100%;
             flex-direction: column;
             background-color: rgb(255, 255, 255);
             backdrop-filter: blur(10px);
             margin: 50px 0px 0px 0px;
             padding: 40px;
-            width: 650px;
             border-radius: .7em;
             grid-area: list;
             .tittle{
