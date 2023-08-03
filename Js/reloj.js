@@ -12,12 +12,12 @@ let monthYear =
         'May','June','July','August',
         'September','October','November','December'];
 
-calendarioContend.innerHTML = 
+const calendario = calendarioContend.innerHTML = 
 `<div class="calendario">
-<div class="day">${dayWeek[reloj.getDay()]}<p>day</p></div>
+<div class="day">${dayWeek[reloj.getDate()]}<p>day</p></div>
 <div class="month">${monthYear[reloj.getMonth()]}<p>month</p></div>
 <div class="year">${reloj.getFullYear()}<p>year</p></div>
-</div>`
+</div>` 
 
 setInterval(()=>{
     let am = 'AM';
