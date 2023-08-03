@@ -20,12 +20,21 @@ calendarioContend.innerHTML =
 </div>`
 
 setInterval(()=>{
+    let am = 'AM';
+    let pm = 'PM';
     let horaLocal = new Date();
     let segundos =horaLocal.getSeconds();
     let minutos = horaLocal.getMinutes();
     let horas = horaLocal.getHours();
-    relojContend.innerHTML = 
-    `<div class="seconds">${segundos}<p>seconds</p></div>
-    <div class="minutes">${minutos}<p>minutes</p></div>
-    <div class="hours">${horas}<p>hours</p></div>`;
+    if (horas >= 12) {
+        relojContend.innerHTML = 
+    `<div class="seconds">${segundos} s<p>seconds</p></div>
+    <div class="minutes">${minutos} m<p>minutes</p></div>
+    <div class="hours">${horas} ${pm}<p>hours</p></div>`;
+    }else{
+        relojContend.innerHTML = 
+    `<div class="seconds">${segundos} s<p>seconds</p></div>
+    <div class="minutes">${minutos} m<p>minutes</p></div>
+    <div class="hours">${horas} ${am}<p>hours</p></div>`;
+    }
 },1000)
