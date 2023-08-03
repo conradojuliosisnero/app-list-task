@@ -7,7 +7,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap"rel="stylesheet" />
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="Js/reloj.js"></script>
 		<link rel="icon" href="img/task.png">
         <title>App Task</title>
 	</head>
@@ -16,11 +15,10 @@
 		<div class="container__task">
 			<div class="tittle"><h1>ACTIVITIES LIST</h1></div>
 			<div class="contenedor__task">
-				<input placeholder="Add Task" type="text" name="input" class="input" />
+				<input placeholder="Add Task" type="text" name="input" class="input" maxlength="15"/>
 				<button class="btn__task">+</button>
 			</div>
-			<ul class="list__task">		
-			</ul>
+			<ul class="list__task"></ul>
 		</div>
         <!-- tareas completadas  -->
 		<div class="contenedor__tareas__completadas" id="task-completed">
@@ -38,5 +36,6 @@
 		</div>
         <!-- scripst  -->
 		<script src="Js/main.js"></script>
+		<script src="Js/reloj.js"></script>
 	</body>
 </html>
