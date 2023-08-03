@@ -2,56 +2,63 @@
 const input = document.querySelector(".input");
 const button = document.querySelector(".btn__task");
 const list = document.querySelector(".list__task");
-const tasks = document.querySelector(".task");
+const taskCompleted = document.querySelector(".list__task__completed");
+const tasks = document.querySelectorAll(".task");
 const leyenda = document.querySelector(".leyend");
 const btndelete = document.querySelector(".btn__detele-task");
+const texto = document.querySelector(".texto");
 
-// function addTask() {
-//     // let li = document.createElement('li')
-//     // li.appendChild(document.createTextNode(input.value))
-//     // console.log(input.value)
-//     // task.appendChild(li)
 
-//     // Capturamos el valor del input
-//     let inputValue = input.value;
-//     console.log(inputValue)
-//     // creamos un nuevo elemento li
-//     const newElement = document.createElement('li');
+//variables
+let idCounter = 0;
+idCounter++;
+let valueInput = input.value;
 
-//     // newElement.textContent = inputValue.textContent;
-// }
-    function addTask() {
-        let textAdd = input.value;
-        let li = document.createElement("li")
-        let p = document.createElement("p")
-        p.textContent = textAdd;
-        li.appendChild(p)
-        list.appendChild(li)
-
-        }
-
-//  funcion SELECCIONAR ELEMENTOS
-function select() {
-    // agregamos estas clases
-	tasks.classList.toggle("select");
-	tasks.classList.toggle("completed");
-
-	// verificamos si contenie la clase completed
-	if (tasks.classList.contains('completed')) {
-		leyenda.style.opacity = "0"
-	} else {
-		leyenda.style.opacity = "1"
-	}
-
+// funcion AGREGAR TAREA
+function addTask() {
+    if (input.value !== "") {
+        let Input = input.value;
+        list.innerHTML += `<li class="task" id="${idCounter}">
+                <p>${Input}</p>
+                <button class="btn__detele-task active">X</button>
+            </li>`;
+        input.value = "";
+    }
 }
+
 
 // funcion BORRAR TAREA
 function deteleTask() {
-	tasks.remove();
+    // if (btndelete.classList.contains('active')) {
+        
+    // }
+
 }
 
-// listeners
-tasks.addEventListener("click", select);
-btndelete.addEventListener("click", deteleTask);
+tasks.forEach(()=>{
+    btndelete.addEventListener('click',deteleTask);
+
+})
+
+
+//  funcion SELECCIONAR ELEMENTOS
+// function selection() {
+//     // agregamos estas clases
+// 	tasks.classList.toggle("select");
+// 	tasks.classList.toggle("completed");
+//     if (tasks.classList.contains('select')) {
+//         let tarea = taskCompleted.innerHTML +=
+//         `<li class="task completed select" id="${idCounter}">
+//             <p>${texto.textContent}</p>
+//         </li>`;
+//     }else{
+//         tarea.remove()
+//     }
+// }
+//iteremos sobre todas las tareas
+// tasks.forEach( ()=>{
+//     tasks.addEventListener("click", selection);
+// })
+
+// LISTENERS
 button.addEventListener("click", addTask);
-// button.addEventListener('click',addTask)
