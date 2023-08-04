@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(223, 223, 223);
+  background-color: #dbdbdb;
   font-family: "Outfit", sans-serif;
   display: grid;
   gap: 20px;
@@ -128,7 +128,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #28a875;
+  background-color: #5df9b0;
   width: 60px;
   height: 55px;
   border: none;
@@ -321,191 +321,91 @@ body {
   padding: 0px 15px;
   font-family: "Outfit", sans-serif;
 }
-
-.wrapper {
+.contenedor__reloj .colors__change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 0.5em;
+  width: 350px;
+  height: 4em;
   position: absolute;
-  right: 20px;
-  bottom: 20px;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  --black: #000000;
-  --ch-black: #141414;
-  --eer-black: #1b1b1b;
-  --night-rider: #2e2e2e;
-  --white: #ffffff;
-  --af-white: #afafaf;
-  --ch-white: #e1e1e1;
-}
-
-footer .demo {
-  position: absolute;
+  right: 10px;
   bottom: 10px;
-  width: 500px;
-  margin: 0 auto;
 }
-
-footer .demo a {
-  text-align: center;
-  color: #000;
-  text-decoration: none;
-  font-weight: 100;
-  border-bottom: 1px solid #000;
-}
-
-.circle {
-  display: block;
-  position: relative;
-  padding: 0;
-  z-index: 98;
-  margin: 0 auto;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+.contenedor__reloj .colors__change .colores, .contenedor__reloj .colors__change .color4, .contenedor__reloj .colors__change .color3, .contenedor__reloj .colors__change .color2, .contenedor__reloj .colors__change .color1 {
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  background-color: var(--white);
-  transition: 0.2s;
-  text-align: center;
-}
-
-.circle:active {
-  transform: scale(0.9);
-  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
-}
-
-.circle:hover {
-  cursor: pointer;
-  background-color: var(--af-white);
-  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
-}
-
-.circle .svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -15px;
-  margin-top: -15px;
-  width: 30px;
-  height: 30px;
-  transition: 0.5s;
-  transform: rotate(180deg);
-}
-
-.circle svg image {
-  filter: brightness(50%);
-}
-
-.sub-circle {
-  z-index: 0;
-  position: absolute;
-  height: 40px;
   width: 40px;
+  height: 40px;
+  border: solid #000000 2px;
+  margin: 0px 10px;
   overflow: hidden;
-  border-radius: 50%;
-  transition: 0.3s;
-  transform: scale(0.5);
-  opacity: 0;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-  border: none;
+  position: relative;
+  cursor: pointer;
 }
-
-.sub-circle label {
-  background-color: var(--af-white);
-  display: block;
-  color: white;
+.contenedor__reloj .colors__change .color1 {
+  background-color: #40a475;
+}
+.contenedor__reloj .colors__change .color1::after {
+  content: "";
   width: 100%;
   height: 100%;
-  line-height: 40px;
-  transition: 0.5s;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #5df9b0;
 }
-
-.sub-circle label:hover {
-  cursor: pointer;
-  background-color: var(--ch-white);
+.contenedor__reloj .colors__change .color1.click {
+  background-color: #5df9b0;
 }
-
-.subs {
-  left: -20px;
-  top: -50px;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  z-index: 0;
-  margin: 0 auto;
-  position: relative;
+.contenedor__reloj .colors__change .color2 {
+  background-color: #0a698f;
 }
-
-.hidden-sub-trigger {
-  display: none;
+.contenedor__reloj .colors__change .color2::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #0ea0da;
 }
-
-.hidden-sub-trigger:checked ~ label {
-  background-color: var(--white);
+.contenedor__reloj .colors__change .color2.click {
+  background-color: #0ea0da;
 }
-
-.hidden-trigger {
-  display: none;
+.contenedor__reloj .colors__change .color3 {
+  background-color: #a3a816;
 }
-
-.hidden-trigger:checked ~ .circle {
-  transform: scale(0.9);
-  cursor: pointer;
-  background-color: var(--white);
-  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1);
+.contenedor__reloj .colors__change .color3::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #c9cf1c;
 }
-
-.hidden-trigger:checked ~ .circle .svg {
-  transform: rotate(45deg);
+.contenedor__reloj .colors__change .color3.click {
+  background-color: #c9cf1c;
 }
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(1) {
-  transform: translate(0px, -100px) scale(1);
-  opacity: 1;
-  transition: 0.1s;
+.contenedor__reloj .colors__change .color4 {
+  background-color: #6f0aa1;
 }
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(2) {
-  transform: translate(75px, -75px) scale(1);
-  opacity: 1;
-  transition: 0.2s;
+.contenedor__reloj .colors__change .color4::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #930cd6;
 }
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(3) {
-  transform: translate(100px, 0px) scale(1);
-  opacity: 1;
-  transition: 0.3s;
-}
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(4) {
-  transform: translate(75px, 75px) scale(1);
-  opacity: 1;
-  transition: 0.4s;
-}
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(5) {
-  transform: translate(0px, 100px) scale(1);
-  opacity: 1;
-  transition: 0.5s;
-}
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(6) {
-  transform: translate(-75px, 75px) scale(1);
-  opacity: 1;
-  transition: 0.6s;
-}
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(7) {
-  transform: translate(-100px, 0px) scale(1);
-  opacity: 1;
-  transition: 0.7s;
-}
-
-.hidden-trigger:checked ~ .subs button:nth-of-type(8) {
-  transform: translate(-75px, -75px) scale(1);
-  opacity: 1;
-  transition: 0.8s;
+.contenedor__reloj .colors__change .color4.click {
+  background-color: #930cd6;
 }
 
 @media screen and (max-width: 1024px) {
