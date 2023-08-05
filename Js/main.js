@@ -57,3 +57,20 @@ function selection(task) {
     }
 }
 
+// menu RESPONSIVE
+const colores = document.querySelector('.item__list');
+const addtaskMenu = document.querySelector('.dos');
+const divColors = document.querySelector('.colors__change');
+const contenedortask = document.querySelector('.contenedor__task');
+
+colores.addEventListener('click',()=>{
+    divColors.classList.toggle('visible');
+})
+
+addtaskMenu.addEventListener('click',()=>{
+    contenedortask.classList.toggle('addtask__visible');
+})
+
+
+
+

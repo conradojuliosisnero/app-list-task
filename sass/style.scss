@@ -14,12 +14,17 @@ body{
     padding: 70px;
     grid-template-columns: repeat(4,1fr);
     grid-template-areas:
+    "nav  nav  nav  nav"
+    "nav  nav  nav  nav"
     "date date date date"
     "date date date date"
     "task task list list"
     "task task list list"
      ;
     width: 100%;
+    header{
+        display:none;
+    }
 }
     // contenedor
     .container__task{
@@ -215,4 +220,5 @@ body{
         }
 
 @import 'reloj';
+@import 'menu-responsive';
 @import 'medias';

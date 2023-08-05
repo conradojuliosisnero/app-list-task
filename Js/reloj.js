@@ -60,6 +60,8 @@ const dia = document.querySelector(".day");
 const mes = document.querySelector(".month");
 const anio = document.querySelector(".year");
 const botonTareas = document.querySelector('.btn__task');
+const menu = document.getElementById('header');
+const menuLetters = document.querySelectorAll('.item__list');
 
 let eventoOcurrio = false;
 
@@ -68,10 +70,15 @@ function changeMent() {
     mes.style.transition = ".5s";
     anio.style.transition = ".5s";
     botonTareas.style.transition = ".5s";
+    menu.style.background = ".5s";
     botonTareas.style.background = "#5df9b0";
+    menu.style.background = "#5df9b0";
 	dia.style.color = "#5df9b0";
     mes.style.color = "#5df9b0";
     anio.style.color = "#5df9b0";
+    menuLetters.forEach((letras)=>{
+        letras.style.color = "#000000"
+    })
     let eventoOcurrio = true;
     if (eventoOcurrio) {
         color1.classList.add('click');
@@ -87,11 +94,16 @@ function changeBlue() {
     dia.style.transition = ".5s";
     mes.style.transition = ".5s";
     anio.style.transition = ".5s";
+    menu.style.background = ".5s";
+    menu.style.background = "#0ea0da";
 	dia.style.color = "#0ea0da";
     mes.style.color = "#0ea0da";
     anio.style.color = "#0ea0da";
     botonTareas.style.transition = ".5s";
     botonTareas.style.background = "#0ea0da";
+    menuLetters.forEach((letras)=>{
+        letras.style.color = "#000000"
+    })
         let eventoOcurrio = true;
     if (eventoOcurrio) {
         color2.classList.add('click');
@@ -108,11 +120,16 @@ function changeYelow() {
     mes.style.transition = ".5s";
     anio.style.transition = ".5s";
     botonTareas.style.transition = ".5s";
+    menu.style.background = ".5s";
+    menu.style.background = "#c9cf1c";
     botonTareas.style.background = "#c9cf1c";
 	dia.style.color = "#c9cf1c";
     mes.style.color = "#c9cf1c";
     anio.style.color = "#c9cf1c";
     color3.classList.toggle('click');
+    menuLetters.forEach((letras)=>{
+        letras.style.color = "#000000"
+    })
     let eventoOcurrio = true;
     if (eventoOcurrio) {
         color3.classList.add('click');
@@ -130,11 +147,16 @@ function changePurple() {
     mes.style.transition = ".5s";
     anio.style.transition = ".5s";
     botonTareas.style.transition = ".5s";
+    menu.style.background = "#930cd6";
+    botonTareas.style.background = "#930cd6";
     botonTareas.style.background = "#930cd6";
 	dia.style.color = "#930cd6";
     mes.style.color = "#930cd6";
     anio.style.color = "#930cd6";
     color4.classList.toggle('click');
+        menuLetters.forEach((letras)=>{
+            letras.style.color = "#ffffff"
+        })
     let eventoOcurrio = true;
     if (eventoOcurrio) {
         color4.classList.add('click');
@@ -147,7 +169,7 @@ function changePurple() {
 
 }
 
-color1.addEventListener("click", changeMent);
-color2.addEventListener("click", changeBlue);
-color3.addEventListener("click", changeYelow);
-color4.addEventListener("click", changePurple);
+color1.addEventListener("mouseover", changeMent);
+color2.addEventListener("mouseover", changeBlue);
+color3.addEventListener("mouseover", changeYelow);
+color4.addEventListener("mouseover", changePurple);

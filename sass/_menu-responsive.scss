@@ -1,0 +1,120 @@
+header{
+    border-radius: .5em;
+    background-color:#ffffff;
+    backdrop-filter: blur(5px);
+    width:100%;
+    height: 150px;
+    top: 0;
+    display: flex;
+    grid-area: nav;
+    nav{
+        width: 100%;
+        display: flex;
+        position: relative;
+        .nav__list{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            list-style: none;
+            .item__list{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+    .colors__change{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: .5em;
+        width: 250px;
+        height: 4em;
+        position: absolute;
+        left:0;
+        bottom: -30px;
+        opacity: 0;
+        transition:opacity .2s;
+        .colores{
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border: solid #000000 2px;
+            margin: 0px 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .color1{
+            @extend .colores;
+            background-color: #40a475;
+            &::after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 50%;
+                left: 0;
+                top: -5px;
+                background-color: #5df9b0
+            }
+            &.click{
+                background-color: #5df9b0;
+            }
+        }
+        .color2{
+            @extend .colores;
+            background-color: #0a698f;
+            &::after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 50%;
+                left: 0;
+                top: -5px;
+                background-color: #0ea0da
+            }
+            &.click{
+                background-color: #0ea0da;
+            }
+        }
+        .color3{
+            @extend .colores;
+            background-color: #a3a816;
+            &::after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 50%;
+                left: 0;
+                top: -5px;
+                background-color: #c9cf1c
+            }
+            &.click{
+                background-color: #c9cf1c;
+            }
+        }
+        .color4{
+            @extend .colores;
+            background-color: #6f0aa1;
+            &::after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 50%;
+                left: 0;
+                top: -5px;
+                background-color: #930cd6
+            }
+            &.click{
+                background-color: #930cd6;
+            }
+        }
+    }
+}
