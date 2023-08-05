@@ -19,13 +19,8 @@
 					<li  class="item__list tres">clock</li>
 				</ul>
 			</nav>
-			<div class="colors__change">
-				<div class="color1 btncolor"></div>
-				<div class="color2 btncolor"></div>
-				<div class="color3 btncolor"></div>
-				<div class="color4 btncolor"></div>
-			</div>
 		</header>
+		
         <!-- lista de tareas  -->
 		<div class="container__task">
 			<div class="tittle"><h1>ACTIVITIES LIST</h1></div>
@@ -35,20 +30,29 @@
 			<input placeholder="Add Task" type="text" name="input" class="input" maxlength="15"/>
 			<button class="btn__task">+</button>
 		</div>
+
         <!-- tareas completadas  -->
 		<div class="contenedor__tareas__completadas" id="task-completed">
 			<div class="tittle"><h1>TASKS COMPLETED</h1></div>
 			<ul class="list__task__completed"></ul>
 		</div>
+
         <!-- reloj  -->
 		<div class="contenedor__reloj">
 			<div class="reloj">
-				<div class="seconds">1<p>seconds</p></div>
-				<div class="minutes">10<p>minutes</p></div>
-				<div class="hours">1<p>hours</p></div>
+				<div class="seconds">1<p class="leyendas">seconds</p></div>
+				<div class="minutes">10<p class="leyendas">minutes</p></div>
+				<div class="hours">1<p class="leyendas">hours</p></div>
 			</div>
 			<div class="calendario"></div>
+			<div class="colors__change">
+				<div class="color1 btncolor"></div>
+				<div class="color2 btncolor"></div>
+				<div class="color3 btncolor"></div>
+				<div class="color4 btncolor"></div>
+			</div>
 		</div>
+
         <!-- scripst  -->
 		<script src="Js/main.js"></script>
 		<script type="module" src="Js/reloj.js"></script>

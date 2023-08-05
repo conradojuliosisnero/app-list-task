@@ -36,13 +36,13 @@ body header {
 .container__task .tittle {
   color: #313131;
   display: flex;
-  position: absolute;
+  position: relative;
   top: 35px;
   width: 100%;
   align-items: flex-start;
   justify-content: center;
   font-size: 0.7em;
-  margin: 0;
+  margin: 0px 0px 30px 0px;
   padding: 30px 0px;
 }
 .container__task ul {
@@ -51,21 +51,21 @@ body header {
   position: relative;
   flex-direction: column;
   padding: 0;
-  margin: 50px 0px;
+  margin: 20px 0px 0px 0px;
 }
 .container__task ul .task {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  margin: 50px 0px 20px 0px;
+  margin: 0px 0px 30px 0px;
   background-color: #ffcece;
   width: 100%;
   height: 80px;
   border-radius: 0.9em;
   color: rgb(0, 0, 0);
   font-weight: 700;
-  padding: 0px 0px 0px 60px;
+  padding: 0px 0px 0px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -196,7 +196,7 @@ body header {
   opacity: 0;
 }
 .contenedor__tareas__completadas ul .task.completed::after {
-  content: "Completed";
+  content: "";
   position: absolute;
   color: #ffffff;
   font-weight: 700;
@@ -324,6 +324,93 @@ body header {
   padding: 0px 15px;
   font-family: "Outfit", sans-serif;
 }
+.contenedor__reloj .colors__change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 0.5em;
+  width: 250px;
+  height: 4em;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  transition: opacity 0.2s;
+}
+.contenedor__reloj .colors__change .colores, .contenedor__reloj .colors__change .color4, .contenedor__reloj .colors__change .color3, .contenedor__reloj .colors__change .color2, .contenedor__reloj .colors__change .color1 {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: solid #000000 2px;
+  margin: 0px 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.contenedor__reloj .colors__change .color1 {
+  background-color: #40a475;
+}
+.contenedor__reloj .colors__change .color1::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #5df9b0;
+}
+.contenedor__reloj .colors__change .color1.click {
+  background-color: #5df9b0;
+}
+.contenedor__reloj .colors__change .color2 {
+  background-color: #0a698f;
+}
+.contenedor__reloj .colors__change .color2::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #0ea0da;
+}
+.contenedor__reloj .colors__change .color2.click {
+  background-color: #0ea0da;
+}
+.contenedor__reloj .colors__change .color3 {
+  background-color: #a3a816;
+}
+.contenedor__reloj .colors__change .color3::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #c9cf1c;
+}
+.contenedor__reloj .colors__change .color3.click {
+  background-color: #c9cf1c;
+}
+.contenedor__reloj .colors__change .color4 {
+  background-color: #6f0aa1;
+}
+.contenedor__reloj .colors__change .color4::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  background-color: #930cd6;
+}
+.contenedor__reloj .colors__change .color4.click {
+  background-color: #930cd6;
+}
 
 header {
   border-radius: 0.5em;
@@ -367,7 +454,7 @@ header .colors__change {
   opacity: 0;
   transition: opacity 0.2s;
 }
-header .colors__change .colores, header .colors__change .color4, header .colors__change .color3, header .colors__change .color2, header .colors__change .color1 {
+header .colors__change .colores, header .colors__change .color4, header .colors__change .color3, header .colors__change .color2, header .colors__change .color1, header .contenedor__reloj .colors__change .color1, .contenedor__reloj header .colors__change .color1, header .contenedor__reloj .colors__change .color2, .contenedor__reloj header .colors__change .color2, header .contenedor__reloj .colors__change .color3, .contenedor__reloj header .colors__change .color3, header .contenedor__reloj .colors__change .color4, .contenedor__reloj header .colors__change .color4 {
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -483,11 +570,13 @@ header .colors__change .color4.click {
     right: 10px;
   }
   body .colors__change {
+    opacity: 0;
     transition: bottom 0.2s;
     transition: opacity 0.2s;
   }
   body .colors__change.visible {
     opacity: 1;
+    top: -95px;
     bottom: 0px;
     transition: bottom 0.2s;
   }

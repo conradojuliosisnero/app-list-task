@@ -61,7 +61,9 @@ const mes = document.querySelector(".month");
 const anio = document.querySelector(".year");
 const botonTareas = document.querySelector('.btn__task');
 const menu = document.getElementById('header');
+const relContend = document.querySelector('.contenedor__reloj');
 const menuLetters = document.querySelectorAll('.item__list');
+const leyenda = document.querySelectorAll('.leyendas');
 
 let eventoOcurrio = false;
 
@@ -71,11 +73,12 @@ function changeMent() {
     anio.style.transition = ".5s";
     botonTareas.style.transition = ".5s";
     menu.style.background = ".5s";
+    relContend.style.background = "#5df9b0";
     botonTareas.style.background = "#5df9b0";
     menu.style.background = "#5df9b0";
-	dia.style.color = "#5df9b0";
-    mes.style.color = "#5df9b0";
-    anio.style.color = "#5df9b0";
+	dia.style.color = "#ffffff";
+    mes.style.color = "#ffffff";
+    anio.style.color = "#ffffff";
     menuLetters.forEach((letras)=>{
         letras.style.color = "#000000"
     })
@@ -95,10 +98,11 @@ function changeBlue() {
     mes.style.transition = ".5s";
     anio.style.transition = ".5s";
     menu.style.background = ".5s";
+    relContend.style.background = "#0ea0da";
     menu.style.background = "#0ea0da";
-	dia.style.color = "#0ea0da";
-    mes.style.color = "#0ea0da";
-    anio.style.color = "#0ea0da";
+	dia.style.color = "#ffffff";
+    mes.style.color = "#ffffff";
+    anio.style.color = "#ffffff";
     botonTareas.style.transition = ".5s";
     botonTareas.style.background = "#0ea0da";
     menuLetters.forEach((letras)=>{
@@ -121,11 +125,12 @@ function changeYelow() {
     anio.style.transition = ".5s";
     botonTareas.style.transition = ".5s";
     menu.style.background = ".5s";
+    relContend.style.background = "#c9cf1c";
     menu.style.background = "#c9cf1c";
     botonTareas.style.background = "#c9cf1c";
-	dia.style.color = "#c9cf1c";
-    mes.style.color = "#c9cf1c";
-    anio.style.color = "#c9cf1c";
+	dia.style.color = "#ffffff";
+    mes.style.color = "#ffffff";
+    anio.style.color = "#ffffff";
     color3.classList.toggle('click');
     menuLetters.forEach((letras)=>{
         letras.style.color = "#000000"
@@ -148,11 +153,12 @@ function changePurple() {
     anio.style.transition = ".5s";
     botonTareas.style.transition = ".5s";
     menu.style.background = "#930cd6";
+    relContend.style.background = "#930cd6";
     botonTareas.style.background = "#930cd6";
     botonTareas.style.background = "#930cd6";
-	dia.style.color = "#930cd6";
-    mes.style.color = "#930cd6";
-    anio.style.color = "#930cd6";
+	dia.style.color = "#ffffff";
+    mes.style.color = "#ffffff";
+    anio.style.color = "#ffffff";
     color4.classList.toggle('click');
         menuLetters.forEach((letras)=>{
             letras.style.color = "#ffffff"

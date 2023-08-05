@@ -1,268 +1,264 @@
-
-@media screen and (max-width:1024px) {
-    body{
-        background-color: rgb(223, 223, 223);
-        grid-template-columns: repeat(4,1fr);
-        width: 100%;
-        grid-template-areas:
-        "nav  nav  nav  nav"
-        "nav  nav  nav  nav"
-        "date date date date"
-        "date date date date"
-        "task task list list"
-        "task task list list"
-        ;
-        .container__task{
-            display: flex;
-            flex-direction: column;
-            background-color: rgb(255, 255, 255);
-            backdrop-filter: blur(10px);
-            margin: 50px 0px 0px 0px;
-            padding: 20px;
-            width: 100%;
-            border-radius: .7em;
-            grid-area: task;
-            justify-content: center;
-            align-items: center;
-        }
-        header{display:flex;}
-    }
+@media screen and (max-width: 1024px) {
+	body {
+		background-color: rgb(223, 223, 223);
+		grid-template-columns: repeat(4, 1fr);
+		width: 100%;
+		grid-template-areas:
+			"nav  nav  nav  nav"
+			"nav  nav  nav  nav"
+			"date date date date"
+			"date date date date"
+			"task task list list"
+			"task task list list";
+		.container__task {
+			display: flex;
+			flex-direction: column;
+			background-color: rgb(255, 255, 255);
+			backdrop-filter: blur(10px);
+			margin: 50px 0px 0px 0px;
+			padding: 20px;
+			width: 100%;
+			border-radius: 0.7em;
+			grid-area: task;
+			justify-content: center;
+			align-items: center;
+		}
+		header {
+			display: flex;
+		}
+	}
 }
 
-@media screen and (max-width:769px) {
-    body{
-        background-color:rgb(223, 223, 223);
-        grid-template-columns: repeat(4,1fr);
-        grid-template-areas:
-        "nav  nav  nav  nav"
-        "nav  nav  nav  nav"
-        "date date date date"
-        "date date date date"
-        "list list list list"
-        "list list list list"
-        "task task task task"
-        "task task task task"
-         ;
-        width: 100%;
-        .container__task{
-            .task{
-                &.completed{
-                    &::after{
-                        content: 'Completed';
-                        position: absolute;
-                        color: #ffffff;
-                        font-weight: 700;
-                        font-size: 1em;
-                        right: 10px;
-                    }
-                }
-            }
-        }
-        .colors__change{
-        transition:bottom .2s ;
-        transition:opacity .2s;
-        &.visible{
-        opacity: 1;
-        bottom:0px;
-        transition:bottom .2s;
-        }
-        }
-        .contenedor__task{
-            
-        }
-    }
+@media screen and (max-width: 769px) {
+	body {
+		background-color: rgb(223, 223, 223);
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"nav  nav  nav  nav"
+			"nav  nav  nav  nav"
+			"date date date date"
+			"date date date date"
+			"list list list list"
+			"list list list list"
+			"task task task task"
+			"task task task task";
+		width: 100%;
+		.container__task {
+			.task {
+				&.completed {
+					&::after {
+						content: "Completed";
+						position: absolute;
+						color: #ffffff;
+						font-weight: 700;
+						font-size: 1em;
+						right: 10px;
+					}
+				}
+			}
+		}
+		.colors__change {
+			opacity: 0;
+			transition: bottom 0.2s;
+			transition: opacity 0.2s;
+			&.visible {
+				opacity: 1;
+                top: -95px;
+				bottom: 0px;
+				transition: bottom 0.2s;
+			}
+		}
+	}
 }
 
-@media screen and (max-width:426px) {
-    body{
-        padding: 20px;
-        background-color: rgb(223, 223, 223);
-        grid-template-columns: repeat(4,1fr);
-        grid-template-areas:
-        "nav  nav  nav  nav"
-        "nav  nav  nav  nav"
-        "date date date date"
-        "date date date date"
-        "list list list list"
-        "list list list list"
-        "task task task task"
-        "task task task task"
-         ;
-        width: 100%;
-        .container__task{
-        .task{
-            &.completed{
-                &::after{
-                    content: 'Completed';
-                    position: absolute;
-                    color: #ffffff;
-                    font-weight: 700;
-                    font-size: 1em;
-                    right: 10px;
-                }
-            }
-        }
-    }
+@media screen and (max-width: 426px) {
+	body {
+		padding: 20px;
+		background-color: rgb(223, 223, 223);
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"nav  nav  nav  nav"
+			"nav  nav  nav  nav"
+			"date date date date"
+			"date date date date"
+			"list list list list"
+			"list list list list"
+			"task task task task"
+			"task task task task";
+		width: 100%;
+		.container__task {
+			.task {
+				&.completed {
+					&::after {
+						content: "Completed";
+						position: absolute;
+						color: #ffffff;
+						font-weight: 700;
+						font-size: 1em;
+						right: 10px;
+					}
+				}
+			}
+		}
 
-        .contenedor__task{
-            width: 330px;
-            right: 30px;
-            bottom: 20px;
-            opacity: 0;
-            transition:opacity .2s;
-            &.addtask__visible{
-                display: flex;
-                opacity: 1;
-            }
-        
-        // boton de agregar tareas 
-        .btn__task{
-            width: 40px;
-            height: 40px;
-        }
-    }
-        .contenedor__reloj {
-            display:flex;
-            flex-direction: column;
-            background-color: rgba(255, 255, 255);
-            margin: 10px 0px 0px 0px;
-            padding: 20px;
-            width: 100%;
-            height: 100%;
-            border-radius: 0.7em;
-            grid-area: date;
-            .wrapper {
-                opacity:0;
-            }
-            .day {
-                grid-area: day;
-                @include caja_flex(flex, center, center, 100%);
-                font-size:2.5em;
+		.contenedor__task {
+			width: 330px;
+			right: 30px;
+			bottom: 20px;
+			opacity: 0;
+			transition: opacity 0.2s;
+			&.addtask__visible {
+				display: flex;
+				opacity: 1;
+			}
 
-                p{
-                    color: #000000;
-                    padding: 0px 15px;
-                    font-family: 'Outfit', sans-serif;
-                }
-            }
-            .month {
-                grid-area: month;
-                @include caja_flex(flex, center, center, 100%);
-                font-size:2.5em;
+			// boton de agregar tareas
+			.btn__task {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		.contenedor__reloj {
+			display: flex;
+			flex-direction: column;
+			background-color: rgba(255, 255, 255);
+			margin: 10px 0px 0px 0px;
+			padding: 20px;
+			width: 100%;
+			height: 100%;
+			border-radius: 0.7em;
+			grid-area: date;
+			.wrapper {
+				opacity: 0;
+			}
+			.day {
+				grid-area: day;
+				@include caja_flex(flex, center, center, 100%);
+				font-size: 2.5em;
 
-                p{
-                    color: #000000;
-                    padding: 0px 15px;
-                    font-family: 'Outfit', sans-serif;
-                }
-            }
-            .year {
-                grid-area: year;
-                @include caja_flex(flex, center, center, 100%);
-                font-size:2.5em;
+				p {
+					color: #000000;
+					padding: 0px 15px;
+					font-family: "Outfit", sans-serif;
+				}
+			}
+			.month {
+				grid-area: month;
+				@include caja_flex(flex, center, center, 100%);
+				font-size: 2.5em;
 
-                p{
-                    color: #000000;
-                    padding: 0px 15px;
-                    font-family: 'Outfit', sans-serif;
-                }
-            }
-        }
+				p {
+					color: #000000;
+					padding: 0px 15px;
+					font-family: "Outfit", sans-serif;
+				}
+			}
+			.year {
+				grid-area: year;
+				@include caja_flex(flex, center, center, 100%);
+				font-size: 2.5em;
+
+				p {
+					color: #000000;
+					padding: 0px 15px;
+					font-family: "Outfit", sans-serif;
+				}
+			}
+		}
+	}
 }
-}
 
-@media screen and (max-width:321px) {
-    body{
-        padding: 20px;
-        background-color: rgb(223, 223, 223);
-        grid-template-columns: repeat(4,1fr);
-        grid-template-areas:
-        "nav  nav  nav  nav"
-        "nav  nav  nav  nav"
-        "date date date date"
-        "date date date date"
-        "list list list list"
-        "list list list list"
-        "task task task task"
-        "task task task task"
-         ;
-        width: 100%;
-        .container__task{
-        .task{
-            &.completed{
-                &::after{
-                    content: '';
-                    position: absolute;
-                    color: #ffffff;
-                    font-weight: 700;
-                    font-size: 1em;
-                    right: 10px;
-                }
-            }
-        }
-    }
-    .contenedor__task{
-        width: 280px;
-        right: 30px;
-        bottom: 20px;
-        // boton de agregar tareas 
-        .btn__task{
-            width: 40px;
-            height: 40px;
-        }
-    }
-        // contenedor del reloj 
-        .contenedor__reloj {
-            display:flex;
-            flex-direction: column;
-            background-color: rgba(255, 255, 255);
-            margin: 10px 0px 0px 0px;
-            padding: 20px;
-            width: 100%;
-            height: 100%;
-            border-radius: 0.7em;
-            grid-area: date;
-              .wrapper {
-                opacity:0;
-            }
-            .day {
-                grid-area: day;
-                @include caja_flex(flex, center, center, 100%);
-                font-size:1.9em;
+@media screen and (max-width: 321px) {
+	body {
+		padding: 20px;
+		background-color: rgb(223, 223, 223);
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"nav  nav  nav  nav"
+			"nav  nav  nav  nav"
+			"date date date date"
+			"date date date date"
+			"list list list list"
+			"list list list list"
+			"task task task task"
+			"task task task task";
+		width: 100%;
+		.container__task {
+			.task {
+				&.completed {
+					&::after {
+						content: "";
+						position: absolute;
+						color: #ffffff;
+						font-weight: 700;
+						font-size: 1em;
+						right: 10px;
+					}
+				}
+			}
+		}
+		.contenedor__task {
+			width: 280px;
+			right: 30px;
+			bottom: 20px;
+			// boton de agregar tareas
+			.btn__task {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		// contenedor del reloj
+		.contenedor__reloj {
+			display: flex;
+			flex-direction: column;
+			background-color: rgba(255, 255, 255);
+			margin: 10px 0px 0px 0px;
+			padding: 20px;
+			width: 100%;
+			height: 100%;
+			border-radius: 0.7em;
+			grid-area: date;
+			.wrapper {
+				opacity: 0;
+			}
+			.day {
+				grid-area: day;
+				@include caja_flex(flex, center, center, 100%);
+				font-size: 1.9em;
 
-                p{
-                    color: #000000;
-                    padding: 0px 15px;
-                    font-family: 'Outfit', sans-serif;
-                }
-            }
-            .month {
-                grid-area: month;
-                @include caja_flex(flex, center, center, 100%);
-                font-size:1.9em;
+				p {
+					color: #000000;
+					padding: 0px 15px;
+					font-family: "Outfit", sans-serif;
+				}
+			}
+			.month {
+				grid-area: month;
+				@include caja_flex(flex, center, center, 100%);
+				font-size: 1.9em;
 
-                p{
-                    color: #000000;
-                    padding: 0px 15px;
-                    font-family: 'Outfit', sans-serif;
-                }
-            }
-            .year {
-                grid-area: year;
-                @include caja_flex(flex, center, center, 100%);
-                font-size:1.9em;
+				p {
+					color: #000000;
+					padding: 0px 15px;
+					font-family: "Outfit", sans-serif;
+				}
+			}
+			.year {
+				grid-area: year;
+				@include caja_flex(flex, center, center, 100%);
+				font-size: 1.9em;
 
-                p{
-                    color: #000000;
-                    padding: 0px 15px;
-                    font-family: 'Outfit', sans-serif;
-                }
-            }
-        }
-        .task{
-            .leyend{
-                opacity: 0;
-            }
-        }
-}
+				p {
+					color: #000000;
+					padding: 0px 15px;
+					font-family: "Outfit", sans-serif;
+				}
+			}
+		}
+		.task {
+			.leyend {
+				opacity: 0;
+			}
+		}
+	}
 }
