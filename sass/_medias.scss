@@ -38,10 +38,11 @@
 			"nav  nav  nav  nav"
 			"date date date date"
 			"date date date date"
-			"list list list list"
-			"list list list list"
 			"task task task task"
-			"task task task task";
+			"task task task task"
+			"list list list list"
+			"list list list list"
+			;
 		width: 100%;
 		.container__task {
 			.task {
@@ -81,10 +82,11 @@
 			"nav  nav  nav  nav"
 			"date date date date"
 			"date date date date"
-			"list list list list"
-			"list list list list"
 			"task task task task"
-			"task task task task";
+			"task task task task"
+			"list list list list"
+			"list list list list"
+			;
 		width: 100%;
 		.container__task {
 			.task {
@@ -102,10 +104,8 @@
 		}
 
 		.contenedor__task {
-			width: 330px;
-			right: 30px;
+			width:100%;
 			bottom: 20px;
-			opacity: 0;
 			transition: opacity 0.2s;
 			&.addtask__visible {
 				display: flex;
@@ -178,10 +178,11 @@
 			"nav  nav  nav  nav"
 			"date date date date"
 			"date date date date"
-			"list list list list"
-			"list list list list"
 			"task task task task"
-			"task task task task";
+			"task task task task"
+			"list list list list"
+			"list list list list"
+			;
 		width: 100%;
 		.container__task {
 			.task {
@@ -198,9 +199,7 @@
 			}
 		}
 		.contenedor__task {
-			width: 280px;
-			right: 30px;
-			bottom: 20px;
+			width: 100%;
 			// boton de agregar tareas
 			.btn__task {
 				width: 40px;

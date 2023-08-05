@@ -111,18 +111,14 @@ body{
                         color: #ffffff;
                     }
                 }
-            }
         }
-        .contenedor__task{
+            .contenedor__task{
                 display: flex;
-                position: fixed;
+                position: relative;
                 padding: 20px 0px;
                 justify-content: center;
                 align-items: center;
-                width: 550px;
-                right: 50px;
-                bottom: 30px;
-                z-index: 1000;
+                width: 100%;
                 // escribir tarea 
                 .input{
                     width: 100%;
@@ -152,6 +148,8 @@ body{
                     cursor: pointer;
                 }
         }
+}
+
 
     // TEREAS COMPLETADAS
     .contenedor__tareas__completadas{
