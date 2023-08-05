@@ -20,6 +20,14 @@ function addTask() {
                 <button class="detele-task active" id="detele-task${idCounter}">X</button>
             </li>`;
         input.value = "";
+
+        // Save task to localStorage
+        let tasks = JSON.parse(localStorage.getItem("tasks"));
+        if(tasks === null){
+            tasks = [];
+        }
+        tasks.push({id: `task${idCounter}`, content: Input});
+        localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 }
 
@@ -27,9 +35,19 @@ button.addEventListener("click", addTask);
 
 // funcion BORRAR TAREA
 function deteleTask(id) {
+    // Eliminamos la tarea del DOM
     let taskRemove = document.getElementById(id);
     taskRemove.remove();
+    // Obtener las tareas del almacenamiento local
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    // Eliminar la tarea del almacenamiento local
+    tasks = tasks.filter(task => task.id !== id);
+
+    // Actualizar las tareas en el almacenamietno local
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
 
 list.addEventListener('click',(event)=>{
     if (event.target.className === 'detele-task active') {
@@ -72,5 +90,19 @@ addtaskMenu.addEventListener('click',()=>{
 })
 
 
+// Event to load task
+document.addEventListener('DOMContentLoaded', (event) =>{
+    //Se cargan las tareas del LocalStorage
+   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-
+   // Bucle para cada una de las tareas
+   for(let task of tasks){
+    //Se incrementa el contador en uno
+    idCounter++;
+    // Se crea una nueva tarea en el DOM y se añade a list
+    list.innerHTML += `<li class="task" id="task${idCounter}">
+            <p>${task.content}</p>
+            <button class="detele-task active" id="detele-task${idCounter}">X</button>
+        </li>`;
+   }
+});
