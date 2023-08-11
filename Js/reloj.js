@@ -4,13 +4,13 @@ const calendarioContend = document.querySelector(".calendario");
 const reloj = new Date();
 
 let dayWeek = [
-	"Monday",
-	"Tuesday",
-	"Wednesday",
-	"Thursday",
-	"Friday",
-	"Saturday",
-	"Sunday"
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
 ];
 
 let monthYear = [
