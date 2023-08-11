@@ -10,7 +10,7 @@ let dayWeek = [
 	"Thursday",
 	"Friday",
 	"Saturday",
-	"Sunday",
+	"Sunday"
 ];
 
 let monthYear = [
@@ -27,9 +27,11 @@ let monthYear = [
 	"November",
 	"December",
 ];
+	console.log(dayWeek[reloj.getDay()])
+	console.log(reloj.getDay())
 
 const calendario = (calendarioContend.innerHTML = `<div class="calendario">
-<div class="day">${dayWeek[reloj.getDate()]}<p>day</p></div>
+<div class="day">${dayWeek[reloj.getDay()]}<p>day</p></div>
 <div class="month">${monthYear[reloj.getMonth()]}<p>month</p></div>
 <div class="year">${reloj.getFullYear()}<p>year</p></div>
 </div>`);
@@ -52,7 +54,7 @@ setInterval(() => {
 	}
 }, 1000);
 
-// elemnts selected
+// elemnts selected 
 const color1 = document.querySelector(".color1");
 const color2 = document.querySelector(".color2");
 const color3 = document.querySelector(".color3");

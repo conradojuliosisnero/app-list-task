@@ -407,36 +407,6 @@ body header {
 .contenedor__reloj .colors__change .color4.click {
   background-color: #930cd6;
 }
-.contenedor__reloj.colorMent {
-  background-color: #5df9b0;
-}
-.contenedor__reloj.colorMent .day, .contenedor__reloj.colorMent .year, .contenedor__reloj.colorMent .month {
-  color: #ffffff;
-}
-.contenedor__reloj.colorBlue {
-  background-color: #0ea0da;
-}
-.contenedor__reloj.colorBlue .day, .contenedor__reloj.colorBlue .year, .contenedor__reloj.colorBlue .month {
-  color: #ffffff;
-}
-.contenedor__reloj.colorYellow {
-  background-color: #c9cf1c;
-}
-.contenedor__reloj.colorYellow .day, .contenedor__reloj.colorYellow .year, .contenedor__reloj.colorYellow .month {
-  color: #ffffff;
-}
-.contenedor__reloj.colorPurple {
-  background-color: #930cd6;
-}
-.contenedor__reloj.colorPurple .day, .contenedor__reloj.colorPurple .year, .contenedor__reloj.colorPurple .month {
-  color: #ffffff;
-}
-.contenedor__reloj.colorWhite {
-  background-color: #ffffff;
-}
-.contenedor__reloj.colorWhite .day, .contenedor__reloj.colorWhite .year, .contenedor__reloj.colorWhite .month {
-  color: #000000;
-}
 
 header {
   border-radius: 0.5em;

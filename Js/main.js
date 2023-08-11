@@ -3,17 +3,23 @@ const input = document.querySelector(".input");
 const button = document.querySelector(".btn__task");
 const list = document.querySelector(".list__task");
 const taskCompleted = document.querySelector(".list__task__completed");
-// const tasks = document.querySelectorAll(".task");
 const leyenda = document.querySelector(".leyend");
-// const texto = document.querySelector(".texto");
 
 //variables
 let idCounter = 0;
 
 // funcion AGREGAR TAREA
 function addTask() {
-    if (input.value !== "") {
-        idCounter++;
+    if(input.value !== ""){
+        // Retrieve tasks from localStorage
+        let tasks = JSON.parse(localStorage.getItem("tasks"));
+        if(tasks == null){
+            tasks = [];
+            idCounter = 0;
+        } else{
+            // Find the largest id among the existing tasks
+            idCounter = Math.max(...tasks.map(task => parseInt(task.id.replace('task', '')))) + 1;
+        }
         let Input = input.value;
         list.innerHTML += `<li class="task" id="task${idCounter}">
                 <p>${Input}</p>
@@ -22,14 +28,11 @@ function addTask() {
         input.value = "";
 
         // Save task to localStorage
-        let tasks = JSON.parse(localStorage.getItem("tasks"));
-        if(tasks === null){
-            tasks = [];
-        }
         tasks.push({id: `task${idCounter}`, content: Input});
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 }
+
 
 button.addEventListener("click", addTask);
 
@@ -44,7 +47,7 @@ function deteleTask(id) {
     // Eliminar la tarea del almacenamiento local
     tasks = tasks.filter(task => task.id !== id);
 
-    // Actualizar las tareas en el almacenamietno local
+    // Actualizar las tareas en el almacenamiento local
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
@@ -97,12 +100,10 @@ document.addEventListener('DOMContentLoaded', (event) =>{
 
    // Bucle para cada una de las tareas
    for(let task of tasks){
-    //Se incrementa el contador en uno
-    idCounter++;
     // Se crea una nueva tarea en el DOM y se añade a list
-    list.innerHTML += `<li class="task" id="task${idCounter}">
+    list.innerHTML += `<li class="task" id="${task.id}">
             <p>${task.content}</p>
-            <button class="detele-task active" id="detele-task${idCounter}">X</button>
+            <button class="detele-task active" id="detele-task${task.id.replace('task', '')}">X</button>
         </li>`;
    }
 });
